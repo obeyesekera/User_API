@@ -31,19 +31,26 @@ namespace User_API
 
         private async void DoPATCH(string userID, string URL, string endPoint)
         {
-            using (var httpClient = new HttpClient())
+            try
             {
-                using (var request = new HttpRequestMessage(new HttpMethod("PATCH"), URL + "/resetLoggedUser?email=" + userID))
+                using (var httpClient = new HttpClient())
                 {
-                    var response = await httpClient.SendAsync(request);
+                    using (var request = new HttpRequestMessage(new HttpMethod("PATCH"), URL + "/resetLoggedUser?email=" + userID))
+                    {
+                        var response = await httpClient.SendAsync(request);
 
-                    string result = await response.Content.ReadAsStringAsync();
+                        string result = await response.Content.ReadAsStringAsync();
 
-                    var logoutResponse = JsonSerializer.Deserialize<httpResponse>(result);
+                        var logoutResponse = JsonSerializer.Deserialize<httpResponse>(result);
 
-                    MessageBox.Show(logoutResponse?.message ?? "No message received");
+                        MessageBox.Show(logoutResponse?.message ?? "No message received");
 
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
