@@ -33,9 +33,11 @@ namespace User_API
         {
             try
             {
+                string nURL = URL + endPoint + userID;
+
                 using (var httpClient = new HttpClient())
                 {
-                    using (var request = new HttpRequestMessage(new HttpMethod("PATCH"), URL + "/resetLoggedUser?email=" + userID))
+                    using (var request = new HttpRequestMessage(new HttpMethod("PATCH"), nURL))
                     {
                         var response = await httpClient.SendAsync(request);
 
