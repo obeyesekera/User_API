@@ -34,6 +34,14 @@ namespace User_API
             btnLogout = new System.Windows.Forms.Button();
             btnReset = new System.Windows.Forms.Button();
             lblURL = new System.Windows.Forms.Label();
+            btnAddUser = new System.Windows.Forms.Button();
+            cmbRole = new System.Windows.Forms.ComboBox();
+            cmbLocation = new System.Windows.Forms.ComboBox();
+            txtGivenName = new System.Windows.Forms.TextBox();
+            txtLastName = new System.Windows.Forms.TextBox();
+            txtEmail = new System.Windows.Forms.TextBox();
+            btnSave = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // cmbUserID
@@ -65,7 +73,7 @@ namespace User_API
             btnReset.Name = "btnReset";
             btnReset.Size = new System.Drawing.Size(75, 59);
             btnReset.TabIndex = 2;
-            btnReset.Text = "PW Reset";
+            btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
             btnReset.Click += btnReset_Click;
             // 
@@ -78,11 +86,90 @@ namespace User_API
             lblURL.TabIndex = 3;
             lblURL.Text = "baseURL";
             // 
+            // btnAddUser
+            // 
+            btnAddUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnAddUser.ForeColor = System.Drawing.Color.Blue;
+            btnAddUser.Location = new System.Drawing.Point(360, 179);
+            btnAddUser.Name = "btnAddUser";
+            btnAddUser.Size = new System.Drawing.Size(75, 59);
+            btnAddUser.TabIndex = 4;
+            btnAddUser.Text = "Add User";
+            btnAddUser.UseVisualStyleBackColor = true;
+            btnAddUser.Click += btnAddUser_Click;
+            // 
+            // cmbRole
+            // 
+            cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbRole.FormattingEnabled = true;
+            cmbRole.Location = new System.Drawing.Point(12, 58);
+            cmbRole.Name = "cmbRole";
+            cmbRole.Size = new System.Drawing.Size(299, 23);
+            cmbRole.TabIndex = 5;
+            // 
+            // cmbLocation
+            // 
+            cmbLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbLocation.FormattingEnabled = true;
+            cmbLocation.Location = new System.Drawing.Point(12, 90);
+            cmbLocation.Name = "cmbLocation";
+            cmbLocation.Size = new System.Drawing.Size(299, 23);
+            cmbLocation.TabIndex = 6;
+            // 
+            // txtGivenName
+            // 
+            txtGivenName.Location = new System.Drawing.Point(12, 126);
+            txtGivenName.Name = "txtGivenName";
+            txtGivenName.Size = new System.Drawing.Size(132, 23);
+            txtGivenName.TabIndex = 7;
+            // 
+            // txtLastName
+            // 
+            txtLastName.Location = new System.Drawing.Point(150, 126);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new System.Drawing.Size(161, 23);
+            txtLastName.TabIndex = 8;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new System.Drawing.Point(12, 155);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new System.Drawing.Size(299, 23);
+            txtEmail.TabIndex = 9;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new System.Drawing.Point(236, 184);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(75, 23);
+            btnSave.TabIndex = 10;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new System.Drawing.Point(155, 184);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(75, 23);
+            btnCancel.TabIndex = 11;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // mainFrm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(447, 250);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
+            Controls.Add(txtEmail);
+            Controls.Add(txtLastName);
+            Controls.Add(txtGivenName);
+            Controls.Add(cmbLocation);
+            Controls.Add(cmbRole);
+            Controls.Add(btnAddUser);
             Controls.Add(lblURL);
             Controls.Add(btnReset);
             Controls.Add(btnLogout);
@@ -105,6 +192,14 @@ namespace User_API
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblURL;
+        private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.ComboBox cmbLocation;
+        private System.Windows.Forms.TextBox txtGivenName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 
